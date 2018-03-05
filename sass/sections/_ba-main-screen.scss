@@ -1,0 +1,79 @@
+.ba-main-screen {
+	//@include display-flex(row, center, center);
+	position: relative;
+	min-height: 100vh;
+	background: fixed url('./../img/ba-main.jpg') center center / cover no-repeat;
+	z-index: 1;
+	.ba-whiteWrapper{
+		@include display-flex(row, center, center)
+		width: 840px;
+		height: 170px;
+		background: rgba(255, 255, 255, .3);
+		border-radius: 4px;
+		&  p {
+			margin: 0;
+			padding: 0;
+		}
+		&__good, &__com {
+			color: $main-color;
+			font-size: 60px;
+			font-weight: 300;
+			line-height: 55px;
+			margin-right: 10px;
+		}
+		&__good {
+			text-transform: uppercase;
+
+		}
+		&__right{
+			@include display-flex(column, center, left);
+			max-width: 400px;
+		}
+		&__left{
+			@include display-flex(column, center, right);
+			max-width: 400px;
+			align-items: flex-end;
+		}
+
+		&__first{
+			color: $main-color;
+			font-size: 138.48px;
+			font-weight: 900;
+		}
+	}
+}
+.ba-slider__wrapper{
+	position: relative;
+	min-height: 100vh;
+}
+.ba-header__main{
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+.slick-prev:before {
+	content: '';
+}
+.slick-next:before {
+	content: '';
+}
+.slick-dots{
+	margin-bottom: 90px;
+	@include transition(0.4s);
+	& li {
+		padding-left: 40px;
+	}
+	& li button:before {
+		font-size: 20px;
+		color: #fff
+	}
+	& li.slick-active button:before  {
+		color: #74c7d5;	
+		@include transition(0.4s);
+	}
+
+}

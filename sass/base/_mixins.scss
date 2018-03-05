@@ -1,0 +1,135 @@
+@mixin transition($time) {
+    transition-property: all;
+    transition-duration: $time;
+    transition-timing-function: ease-in-out;
+}
+
+@mixin list($color, $size, $weight) {
+    color: $color;
+    font-size: $size;
+    list-style: none;
+}
+
+@mixin title{
+    color: $base-text-color;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 58px;
+    padding: 0;
+    margin: 0;
+    // text-transform: uppercase;
+}
+@mixin subtitle{
+    color: $base-text-color;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 58px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin smalltitle{
+    color: #ffcccf;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 0;
+    margin: 0;
+
+}
+
+@mixin animation1($animation) {
+    animation: $animation 4s infinite;
+    transition: all 0.4s ease-in-out;
+}
+
+@mixin animation2($animation) {
+    animation: $animation linear 0.8s infinite;
+    transition: all 0.4s ease-in-out;
+}
+
+@mixin placeholder($color, $opacity, $font-size, $font-family) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        opacity: $opacity;
+        font-size: $font-size;
+        font-family: $font-family;
+        text-transform: none;
+    }
+    &:-moz-placeholder {
+        color: $color;
+        opacity: $opacity;
+        font-size: $font-size;
+        font-family: $font-family;
+        text-transform: none;
+    }
+    &::-moz-placeholder {
+        color: $color;
+        opacity: $opacity;
+        font-size: $font-size;
+        font-family: $font-family;
+        text-transform: none;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        opacity: $opacity;
+        font-size: $font-size;
+        font-family: $font-family;
+        text-transform: none;
+    }
+}
+
+@mixin button-bg-1($color) {
+    background: $color;
+    &:hover {
+        background: darken($color, 15%);
+    }
+}
+
+@mixin button-bg-2($color-1, $color-2) {
+    background: $color-1;
+    color: $color-2;
+    &:hover {
+        background: $color-2;
+        color: $color-1;
+    }
+}
+
+@mixin text-elipsis($width) {
+    max-width: $width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $heigh;
+}
+
+@mixin display-flex($flex-direction, $align-horizontal, $align-vertical) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $align-horizontal;
+    align-items: $align-vertical;
+}
+
+@mixin overlay{
+   // height: 100%;
+   // width: 100%;
+   position: absolute;
+   content: '';
+  // font-size: 50px;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+  // margin: auto;
+
+  //padding: 20% 0 0;
+   //transform: translateX(-80px);
+   //transform: translateY(50%) ;
+   transition: transform .4s ease-in, opacity .2s ease-in;
+   opacity: 0; 
+}

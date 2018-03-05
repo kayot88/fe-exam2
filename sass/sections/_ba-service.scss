@@ -1,0 +1,54 @@
+.second{
+	min-height: 1000px;
+	padding: 185px 0 125px;
+	.ba-service{
+		&__title{
+			@include title;
+		}
+		&__subtitle{
+			@include subtitle;
+			padding-top: 45px;
+			.lob{
+				color: #ec9da2;
+
+			}
+		}
+		&__smalltitle{
+			@include smalltitle;
+			padding: 25px 25px;
+		}
+		&__grid{
+			margin: 120px 0;
+			max-height: 400px;
+
+			@include display-flex(row, space-between, center);
+			.ba-service__block{
+				@include display-flex(column, space-around, center);
+			}
+		}
+		&__titless{
+			color:$base-text-color;
+			font-size: 30px;
+			font-weight: 300;
+			line-height: 58px;
+			text-transform: uppercase;
+			margin-top: 25px;
+		}
+		&__longText{
+			color: $second-color;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 20px;
+			padding: 0;
+			margin: 0;
+			margin-top: 50px;
+
+		}
+		&__block{
+			background-color: #c45158;
+			margin: 0 10px;
+			padding: 45px 25px;
+		}
+
+	}
+}

@@ -1,0 +1,137 @@
+.fifth{
+	min-height: 870px;
+	padding-top: 200px;
+	.ba-contactus{
+		&__title{
+			@include transition(0.4s);
+			@include title;
+			text-transform: uppercase;
+		}
+		&__smalltitle{
+			@include transition(0.4s);
+			@include smalltitle;
+			padding: 0 25px;
+			margin-top: 35px;
+			margin-bottom: 60px;
+			color: #eff3e9;
+		}
+
+
+	}
+}
+.blocks{
+	display: flex;
+}
+.contact__address{
+	flex-direction: column;
+	width:50%;
+	height: 275px;
+}
+.contact__block{
+	display: flex;
+	justify-content: space-between;
+}
+.contact__block-a{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	margin-right: 40px;
+	max-height: 220px;
+}
+.contact__block-d{
+	color: rgba(255,255,255,0.7);
+	text-transform: capitalize;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+.contact__block-f{
+	display: flex;
+}
+.contact__block-g{
+	color: rgba(255,255,255,0.7);
+	margin-right: 24px;
+}
+.contact__block-h{
+	display: block;
+	width: 100%;
+	color: #fff;
+	margin-bottom: 20px;
+}
+.contact__map{
+	height: 220px;
+	width: 260px;
+	margin-right: 50px;
+}
+.contact__h{
+	text-transform: none;
+}
+.blocks{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 150px;
+}
+
+.question{
+	position: relative;
+	width:50%;
+	height: 275px;
+	fieldset{
+		border: none;
+	}
+	textarea{
+		background: rgba(0,0,0,0.1);
+		border: none;
+		border-radius: 3px;
+		font-size: 16px;
+		&:focus{
+			background: #fff;
+		}
+		width:100%;
+		height: 160px;
+		margin-top: 19px;
+		background: rgba(0,0,0,0.1);
+		padding: 5px;
+		overflow: hidden;
+	}
+	input{
+		background: rgba(0,0,0,0.1);
+		border: none;
+		border-radius: 3px;
+		font-size: 16px;
+		&:focus{
+			background: #fff;
+		}
+		height: 40px;
+		width:47%;
+		padding: 0 19px;
+		&:nth-child(1){
+			margin-right: 26px;
+		}
+	}
+	&__button{
+		display: inline-block;
+		position: absolute;
+		bottom: -80px;
+		left: calc(50% - 130px);
+		width: 260px;
+		height: 50px;
+		color: white;
+		font-family: "Lato-Black",sans-serif;
+		font-size: 26px;
+		font-weight: 400;
+		line-height: 21px;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		box-shadow: inset 0 -4px 0 rgba(178, 74, 80, 0.5);
+		border: none;
+		background-color: #df5c64;
+	}
+}
+.ba-map {
+	height: 220px;
+	width: 260px;
+	flex-basis: 50%;
+	margin-top: 70px;
+}
+

@@ -1,0 +1,143 @@
+.ba-nav{
+	@include display-flex(row, space-between, center);
+	height: 77px;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    @include transition(0.4s);
+    &--fixed {
+        position: fixed;
+        background: $base-text-color;
+        top: 0;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        @include transition(0.4s);
+        z-index: 10;
+        .ba-nav__logo--fixed {
+          color: $main-color;
+          @include transition(0.4s);
+      }
+      .ba-nav__link {
+        color: $main-color;
+        @include transition(0.4s);
+        &:hover{
+            color:$base-text-color;
+            @include transition(0.4s);
+            cursor: pointer;
+        }
+    }
+}
+&__list{
+  @include display-flex(row, center, center);
+  @include list($base-text-color, 18px, 400);
+  margin-right: 20px;
+}
+&__item{
+  padding: 40px 27px 17px;
+  @include transition(0.4s);
+  &:hover{
+   background-color: $main-color;
+   border-radius: 0 0 5px 5px;
+   cursor: pointer;
+   //@include transition(0.4s);
+}
+&--active{
+ background-color: $main-color;
+ border-radius: 0 0 5px 5px;
+ @include transition(0.4s);
+ .ba-nav__link{
+   color:$base-text-color;
+   @include transition(0.4s);   
+}
+}
+}
+&__link{
+
+}
+&__logo{
+  font-family: Damion;
+  font-size: 50px;
+  font-weight: 400;
+  margin-left: 20px;
+}
+}
+.nav {
+    &__btn {
+        display: none;
+        width: 36px;
+        height: 36px;
+        border: 1px white;
+        color: #fff;
+        border-radius: 6px;
+        background-color: transparent;
+        cursor: pointer;
+        outline: none;
+        @include transition(0.4s);
+        &:hover {
+            border: 1px solid $main-color;
+            background-color: transparent;
+            cursor: pointer;
+            span {
+                background-color: $main-color;
+            }
+        }
+        @media (max-width: 600px) {
+            display: block;
+        }
+        span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background-color: $main-color;
+            margin: 0 auto 4px;
+            @include transition(0.4s);
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        &--fixed {
+            border: 1px solid $main-color;
+            span {
+                background-color: $main-color;
+            }
+            &:hover {
+                span {
+                    background-color: $main-color;
+                    cursor: pointer;
+                }
+            }
+        }
+        &--animate {
+            position: relative;
+            border: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                &:first-of-type {
+                    transform: translate(-50%, -50%) rotate(225deg);
+                }
+                &:nth-of-type(2) {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+                &:last-of-type {
+                    transform: translate(-50%, -50%) rotate(-225deg);
+                }
+            }
+            &:hover {
+                border: 1px solid $main-color;
+                background-color: transparent;
+                cursor: pointer;
+                span {
+                    background-color: $main-color;
+                }
+            }
+        }
+    }
+}
