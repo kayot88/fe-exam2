@@ -21,6 +21,11 @@
 			.ba-whoweare__block{
 				@include transition(0.4s);
 				@include display-flex(column, space-around, center);
+				position: relative;
+				background: rgba(94, 77, 91, .5);
+				margin: 0 10px;
+				padding: 40px 25px 25px;
+				overflow: hidden;
 				&:hover{
 					@include transition(0.4s);
 					cursor: pointer;
@@ -49,74 +54,126 @@
 						background-color: #3e61af;
 					}
 				}
-			}
-		}
-		&__wrap{
-			@include display-flex(row, center, center);
-			.ba-whoweare__button{
-				display: inline-block;
-				height: 50px;
-				line-height: 50px;
-				background: #a1ca6c;
-				padding: 0 70px;
-				border-radius: 5px;
-				margin-top: 50px;
-				text-transform: uppercase;
-				font-size: 25px;
-				position: relative;
-				&:before {
-					content: '';
-					position: absolute;
-					border: 15px solid #a1ca6c;
-					border-left: 15px solid transparent;
-					border-right: 15px solid transparent;
-					border-bottom: 15px solid transparent;
-					bottom: -30px;
-					left: 50%;
-					transform: translateX(-50%);
-				}
-			}
-		}
 
-		&__titless{
-			height: 20px;
-			color: #c7b6c5;
-			font-size: 25px;
-			font-weight: 900;
-			line-height: 58px;
-			text-transform: uppercase;
-			margin: 25px 0 15px;
-			padding: 0;
-		}
-		&__longText{
-			color: #a1ca6c;
-			font-size: 14px;
-			font-weight: 400;
-			line-height: 58px;
-			margin: 0 0 35px;
-			padding: 0;
-		}
-		&__block{
-			background: rgba(94, 77, 91, .5);
-			margin: 0 10px;
-			padding: 40px 25px 25px;
-		}
-		&__social {
-			@include display-flex(row, space-between, center);
-			& a{
-				text-align: center;
-				height: 30px;
-				width: 30px;
-				border-radius: 50%;
-				line-height: 30px;
-				background-color: #a1859e;
-				&:not(:last-child){
-					margin-right: 20px;
+				
+
+				.ba-whoweare__titless{
+					height: 20px;
+					color: #c7b6c5;
+					font-size: 25px;
+					font-weight: 900;
+					line-height: 58px;
+					text-transform: uppercase;
+					margin: 25px 0 15px;
+					padding: 0;
+				}
+				.ba-whoweare__longText{
+					color: #a1ca6c;
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 58px;
+					margin: 0 0 35px;
+					padding: 0;
 				}
 			}
+			.ba-whoweare__social{
+				height: 20px;
+				width: 100%;
+				@include display-flex(row, space-between, center);
+				.ba-whoweare__overlay{
+					bottom: -10%;
+					left: 0;
+					right: 0;
+					position: absolute;
+					@include display-flex(row, space-between, center );
+					.ba-social__item {
+						width: 60px;
+						height: 140px;
+						padding: 10px;
+						padding-top: 15px;
+						border-radius: 10px;
+						&:hover{
+							background-color: #74c7d5;
+						}
+						@include display-flex(column, top, center );
+						transition: all 1s;
+						transform: translate(0, 50px);
+						z-index: 100;
+						& a{
+							text-align: center;
+							height: 30px;
+							width: 30px;
+							border-radius: 50%;
+							line-height: 30px;
+							background-color: #a1859e;
+						}	
+						&:hover {
+							transform: translate(0, -40px);
+
+							// .ba-social__item{
+								// 	color: green;
+								// }
+								.facebook {
+									background-color: #4f689e;
+									transform: rotate(360deg);
+									transition: all 1s;
+								}
+								.twitter {
+									background-color: #74c7d5;
+									transform: rotate(360deg);
+									transition: all 1s;
+								}
+								.google {
+									background-color: #df5c64;
+									transform: rotate(360deg);
+									transition: all 1s;
+								}
+								.linkedin {
+									background-color: #3e61af;
+									transform: rotate(360deg);
+									transition: all 1s;
+								}
+							}
+							.ba-social__item-title{
+								-moz-transform: rotate(-90deg);
+								-webkit-transform: rotate(-90deg);
+								-o-transform: rotate(-90deg);
+							}
+						}	
+					}
+				}
+			}
+
 		}
-		// &__svg{
-			// 	margin-top: 30px;
-			// }
+	}
+
+	.ba-social__icon{
+		margin-bottom: 20px;
+
+	}
+	.ba-whoweare__wrap{
+		@include display-flex(row, center, center);
+		.ba-whoweare__button{
+			display: inline-block;
+			height: 50px;
+			line-height: 50px;
+			background: #a1ca6c;
+			padding: 0 70px;
+			border-radius: 5px;
+			margin-top: 50px;
+			text-transform: uppercase;
+			font-size: 25px;
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				border: 15px solid #a1ca6c;
+				border-left: 15px solid transparent;
+				border-right: 15px solid transparent;
+				border-bottom: 15px solid transparent;
+				bottom: -30px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		}
 	}

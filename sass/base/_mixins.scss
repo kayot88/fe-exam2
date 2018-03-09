@@ -116,20 +116,12 @@
 }
 
 @mixin overlay{
-   // height: 100%;
-   // width: 100%;
    position: absolute;
    content: '';
-  // font-size: 50px;
    left: 0;
    top: 0;
    right: 0;
    bottom: 0;
-  // margin: auto;
-
-  //padding: 20% 0 0;
-   //transform: translateX(-80px);
-   //transform: translateY(50%) ;
    transition: transform .4s ease-in, opacity .2s ease-in;
    opacity: 0; 
 }

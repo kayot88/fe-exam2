@@ -1,9 +1,9 @@
 .ba-nav{
-	@include display-flex(row, space-between, center);
-	height: 77px;
-	position: absolute;
-	top: 0;
-	z-index: 2;
+    @include display-flex(row, space-between, center);
+    height: 77px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
     left: 50%;
     transform: translateX(-50%);
     @include transition(0.4s);
@@ -27,30 +27,28 @@
             @include transition(0.4s);
             cursor: pointer;
         }
-    }
+    }   
 }
-&__list{
-  @include display-flex(row, center, center);
-  @include list($base-text-color, 18px, 400);
-  margin-right: 20px;
-}
+//
+
 &__item{
   padding: 40px 27px 17px;
   @include transition(0.4s);
   &:hover{
-   background-color: $main-color;
-   border-radius: 0 0 5px 5px;
-   cursor: pointer;
-   //@include transition(0.4s);
-}
-&--active{
- background-color: $main-color;
- border-radius: 0 0 5px 5px;
- @include transition(0.4s);
- .ba-nav__link{
-   color:$base-text-color;
-   @include transition(0.4s);   
-}
+     background-color: $main-color;
+     border-radius: 0 0 5px 5px;
+     cursor: pointer;
+     //@include transition(0.4s);
+ }
+ &--active{
+    background-color: $main-color;
+    border-radius: 0 0 5px 5px;
+    @include transition(0.4s);
+    .ba-nav__link{
+     color:$base-text-color;
+     @include transition(0.4s);   
+ }
+
 }
 }
 &__link{
@@ -61,6 +59,9 @@
   font-size: 50px;
   font-weight: 400;
   margin-left: 20px;
+  @media (max-width: 768px) {
+    display: none;
+}
 }
 }
 .nav {
@@ -74,16 +75,18 @@
         background-color: transparent;
         cursor: pointer;
         outline: none;
+        position: absolute;
+        right: 0;
         @include transition(0.4s);
         &:hover {
-            border: 1px solid $main-color;
+            //border: 1px solid $main-color;
             background-color: transparent;
             cursor: pointer;
             span {
                 background-color: $main-color;
             }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             display: block;
         }
         span {
@@ -110,7 +113,7 @@
             }
         }
         &--animate {
-            position: relative;
+            //position: relative;
             border: none;
             background-color: transparent;
             border: 1px solid transparent;
@@ -131,13 +134,45 @@
                 }
             }
             &:hover {
-                border: 1px solid $main-color;
+                //border: 1px solid $main-color;
                 background-color: transparent;
                 cursor: pointer;
                 span {
                     background-color: $main-color;
                 }
             }
+
         }
+    }
+}
+.ba-nav__list {
+    @include transition(0.4s);
+    @include display-flex(row, center, center);
+    @include list($base-text-color, 18px, 400);
+    margin-right: 20px;
+    @media (max-width: 768px) {
+        width: 100%;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin-top: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        padding-left: 0;
+        display: none;
+        @include transition(0.4s);
+
+
+    }
+}
+.ba-nav__list--open {
+    display: inline-block ;
+    margin-right: 35px;
+    margin-top: 300px;
+    @include transition(0.4s);
+    .ba-nav__item{
+        text-align: center;
     }
 }

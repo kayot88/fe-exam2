@@ -2,7 +2,7 @@
 	$(document).ready(function() {
 //Adaptive menu, animated button
 $("#menu").click(function() {
-  // $(".header__nav").toggleClass("header__nav--open");
+  $(".ba-nav__list").toggleClass("ba-nav__list--open");
   $(".nav__btn").toggleClass("nav__btn--animate");
   //$(".main-screen__slider-item").toggleClass("main-screen__slider-item--adaptive-menu");
 });
